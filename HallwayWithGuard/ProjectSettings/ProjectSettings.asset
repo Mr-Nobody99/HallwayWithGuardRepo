@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: 8221f7898540c134283526873e74789b
+  productGUID: cb2a552f3f3d86646a206941be7a6875
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: HallwayWithGuard
+  productName: New Unity Project
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -611,9 +611,9 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 31bf8c9c-eaf2-4d60-875f-572c7cae38d9
+  cloudProjectId: 70d3ab4c-c2c7-472f-9e1e-037ea9632329
   framebufferDepthMemorylessMode: 0
-  projectName: HallwayWithGuard (2)
+  projectName: New Unity Project (3)
   organizationId: kutzy99
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
