@@ -141,6 +141,13 @@ public class AI_Controller : MonoBehaviour
         }
     }
 
+    public bool Freeze(bool isStopped)
+    {
+        _navMeshAgent.isStopped = isStopped;
+
+        return _navMeshAgent.isStopped;
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")

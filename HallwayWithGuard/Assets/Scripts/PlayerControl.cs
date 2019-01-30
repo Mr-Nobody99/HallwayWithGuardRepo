@@ -9,12 +9,19 @@ public class PlayerControl : MonoBehaviour
     float jumpSpeed = 10f;
     float gravity = 20.0f;
 
+    private GameObject guardRef;
+    private bool guardIsStopped = false;
     private Vector3 moveDir = Vector3.zero;
+    private Vector3 toEnemyDir;
+    private float toEnemyDot;
+    private Ray lookRay;
+    private Ray enemyRay;
     private CharacterController cc;
     private Camera playerCam;
     // Start is called before the first frame update
     void Start()
     {
+        guardRef = GameObject.FindGameObjectWithTag("Guard");
         cc = GetComponent<CharacterController>();
         playerCam = FindObjectOfType<Camera>();
         gameObject.transform.position = new Vector3(0, 5, 0);
@@ -23,6 +30,25 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        toEnemyDir = guardRef.transform.position - transform.position;
+        lookRay.origin = transform.position;
+        lookRay.direction = transform.forward;
+        enemyRay.origin = transform.position;
+        enemyRay.direction = (guardRef.transform.position -transform.position);
+        Debug.DrawRay(lookRay.origin, lookRay.direction*100, Color.blue);
+        Debug.DrawRay(enemyRay.origin, enemyRay.direction *100 , Color.red);
+        toEnemyDot = Vector3.Dot(transform.forward, toEnemyDir);
+        print(toEnemyDot);
+
+        if(toEnemyDot < 0 && !guardIsStopped)
+        {
+           guardIsStopped = guardRef.GetComponent<AI_Controller>().Freeze(true);
+        }
+        else if(toEnemyDot >= 0 && guardIsStopped)
+        {
+            guardIsStopped = guardRef.GetComponent<AI_Controller>().Freeze(false);
+        }
+
         if (cc.isGrounded)
         {
             moveDir = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));

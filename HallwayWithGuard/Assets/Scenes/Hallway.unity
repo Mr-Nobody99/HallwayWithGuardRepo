@@ -407,6 +407,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &187886431 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400010, guid: e4ed303d15b4645499f6724b8d063db8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1261459155}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &230589559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1410,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RabbitMan
       objectReference: {fileID: 0}
+    - target: {fileID: 100034, guid: e4ed303d15b4645499f6724b8d063db8, type: 3}
+      propertyPath: m_TagString
+      value: Guard
+      objectReference: {fileID: 0}
     - target: {fileID: 400034, guid: e4ed303d15b4645499f6724b8d063db8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.78
@@ -1463,6 +1473,30 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: e4ed303d15b4645499f6724b8d063db8, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: e4ed303d15b4645499f6724b8d063db8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.000000035381
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: e4ed303d15b4645499f6724b8d063db8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0006683
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: e4ed303d15b4645499f6724b8d063db8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0000017447
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: e4ed303d15b4645499f6724b8d063db8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.010111
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: e4ed303d15b4645499f6724b8d063db8, type: 3}
+      propertyPath: m_RootBone
+      value: 
+      objectReference: {fileID: 187886431}
+    - target: {fileID: 13700000, guid: e4ed303d15b4645499f6724b8d063db8, type: 3}
+      propertyPath: m_SkinnedMotionVectors
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4ed303d15b4645499f6724b8d063db8, type: 3}
@@ -1835,7 +1869,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1867632241
 GameObject:
