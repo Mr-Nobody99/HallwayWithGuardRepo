@@ -17,13 +17,13 @@ public class PlayerControl : MonoBehaviour
     private Ray lookRay;
     private Ray enemyRay;
     private CharacterController cc;
-    private Camera playerCam;
+    private GameObject playerCam;
     // Start is called before the first frame update
     void Start()
     {
         guardRef = GameObject.FindGameObjectWithTag("Guard");
         cc = GetComponent<CharacterController>();
-        playerCam = FindObjectOfType<Camera>();
+        playerCam = GameObject.FindGameObjectWithTag("MainCamera");
         gameObject.transform.position = new Vector3(0, 5, 0);
     }
 

@@ -18,6 +18,7 @@ public class AI_Controller : MonoBehaviour
     [SerializeField]
     List<WayPoint> _patrolPoints;
 
+    Animator animControl;
     NavMeshAgent _navMeshAgent;
     int _currentPatrolIndex;
     bool _isTravelling;
@@ -30,6 +31,7 @@ public class AI_Controller : MonoBehaviour
     void Start()
     {
         _playerRef = GameObject.FindGameObjectWithTag("Player");
+        animControl = GetComponent<Animator>();
         _navMeshAgent = this.GetComponent<NavMeshAgent>();
 
         if(_navMeshAgent == null)
@@ -144,6 +146,7 @@ public class AI_Controller : MonoBehaviour
     public bool Freeze(bool isStopped)
     {
         _navMeshAgent.isStopped = isStopped;
+        animControl.SetBool("IsStoped", isStopped);
 
         return _navMeshAgent.isStopped;
     }
