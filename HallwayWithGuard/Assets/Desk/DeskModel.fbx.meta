@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 04b3c665a67163f4f815db7b152e90c9
+guid: 7b4ebe32328f83f4e9398be69f517252
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Desk_Basket
-    100004: Desk_Basket1
-    100006: Desk_Support
-    100008: Desk_Top
-    100010: Desk_Top1
+    100000: Desk_Basket
+    100002: Desk_Basket1
+    100004: Desk_Support
+    100006: Desk_Top
+    100008: Desk_Top1
+    100010: //RootNode
     100012: group
     100014: imagePlane2
     100016: imagePlane3
@@ -31,12 +31,12 @@ ModelImporter:
     100050: transform7
     100052: transform8
     100054: transform9
-    400000: //RootNode
-    400002: Desk_Basket
-    400004: Desk_Basket1
-    400006: Desk_Support
-    400008: Desk_Top
-    400010: Desk_Top1
+    400000: Desk_Basket
+    400002: Desk_Basket1
+    400004: Desk_Support
+    400006: Desk_Top
+    400008: Desk_Top1
+    400010: //RootNode
     400012: group
     400014: imagePlane2
     400016: imagePlane3
@@ -59,22 +59,19 @@ ModelImporter:
     400050: transform7
     400052: transform8
     400054: transform9
+    2000000: left
+    2100000: Desk
+    2100002: Legs
     2300000: Desk_Top1
     3300000: Desk_Top1
     4300000: Desk_Top1
-    9500000: //RootNode
     2186277476908879412: ImportLogs
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 43e6517b4244fc146a32dddd8092c1b7, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -104,10 +101,10 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-    importVisibility: 0
+    importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -115,20 +112,20 @@ ModelImporter:
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    indexFormat: 1
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 0
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   importAnimation: 1
@@ -149,7 +146,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
