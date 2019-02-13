@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour
         guardRef2 = GameObject.FindGameObjectWithTag("Guard2");
         cc = GetComponent<CharacterController>();
         playerCam = GameObject.FindGameObjectWithTag("MainCamera");
-        gameObject.transform.position = new Vector3(0, 5, 0);
+        //gameObject.transform.position = new Vector3(0, 5, 0);
     }
 
     // Update is called once per frame
