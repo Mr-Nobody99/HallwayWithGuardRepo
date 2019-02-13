@@ -7,7 +7,11 @@ using UnityEngine.AI;
 public class AI_Controller : MonoBehaviour
 {
     private GameObject _playerRef;
+    private Ray PlayerLookRay;
+    private float _ToPlayerDot;
     private bool _hasPlayer = false;
+    private bool _frozen = false;
+    private float _dot;
 
     [SerializeField]
     bool _Wait;
@@ -20,6 +24,7 @@ public class AI_Controller : MonoBehaviour
 
     Animator animControl;
     NavMeshAgent _navMeshAgent;
+    Ray _enemyRay;
     int _currentPatrolIndex;
     bool _isTravelling;
     bool _isWaiting;
@@ -54,6 +59,13 @@ public class AI_Controller : MonoBehaviour
 
     public void Update()
     {
+
+        _dot = Vector3.Dot(_playerRef.transform.forward, transform.position - _playerRef.transform.position);
+
+        if (_dot < 0) _frozen = Freeze(true);
+        else if (_dot > 0) _frozen = Freeze(false);
+
+
         if(_isTravelling && _navMeshAgent.remainingDistance <= 1.0f)
         {
             _isTravelling = false;
