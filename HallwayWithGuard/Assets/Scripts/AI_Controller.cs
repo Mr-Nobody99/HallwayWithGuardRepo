@@ -81,6 +81,10 @@ public class AI_Controller : MonoBehaviour
                 SetDestination();
             }
         }
+        else if (_isTravelling && _hasPlayer)
+        {
+            _navMeshAgent.SetDestination(_playerRef.transform.position);
+        }
 
         if (_isWaiting)
         {
@@ -133,25 +137,24 @@ public class AI_Controller : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        int layerMask = 1 << 8;
-        layerMask = ~layerMask;
-        Vector3 dir = _playerRef.transform.position - new Vector3(transform.position.x, _playerRef.transform.position.y, transform.position.z);
-
-        if(other.tag == "Player")
+        RaycastHit Hit;
+        if (other.tag == "Player" && !_frozen)
         {
-            /*RaycastHit hit;
-            if(Physics.Raycast(transform.position, dir, out hit, 10))
+            if( Physics.Raycast(transform.position + new Vector3(0.0f,1.0f,0.0f), transform.forward, out Hit,100.0f))
             {
-                Debug.DrawRay(transform.position, dir * 10, Color.yellow);
-                print(hit.rigidbody.gameObject.tag);
-                if (hit.Equals(_playerRef))
+                Debug.DrawRay(transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.forward * 100.0f, Color.red);
+               // print(Hit.collider.tag);
+                if (Hit.collider.gameObject.tag == "Player")
                 {
+                    _navMeshAgent.speed = 7.0f;
                     _hasPlayer = true;
-                    SetDestination();
+                    _navMeshAgent.SetDestination(_playerRef.transform.position);
+                    //_navMeshAgent.SetDestination(_playerRef.transform.position);
+                    animControl.SetBool("PersuePlayer", true);
+
                 }
-            }*/
-            _hasPlayer = true;
-            SetDestination();
+               // if (Hit.rigidbody.tag.ToString() == "Player") print("Can See Player");
+            }
         }
     }
 
@@ -159,6 +162,8 @@ public class AI_Controller : MonoBehaviour
     {
         _navMeshAgent.isStopped = isStopped;
         animControl.SetBool("IsStoped", isStopped);
+
+        if (isStopped) animControl.SetBool("PersuePlayer", false);
 
         return _navMeshAgent.isStopped;
     }

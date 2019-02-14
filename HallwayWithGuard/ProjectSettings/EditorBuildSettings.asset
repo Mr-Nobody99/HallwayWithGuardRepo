@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hallway.unity
     guid: 7fbfb6a66575ce948a369dbe73df6cd4
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: ba75bf48571a51e4b9bf5245ea593832
   m_configObjects: {}
