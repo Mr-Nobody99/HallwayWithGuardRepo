@@ -1,44 +1,58 @@
 fileFormatVersion: 2
-guid: 61df668f59645a94e9194bf97df3b293
+guid: 83552a09502f5f343be8305dfc97d256
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: pCube81
-    100004: pCube82
-    100006: pPlane4
-    100008: pPlane5
-    100010: pPlane6
-    100012: pPlane7
-    400000: //RootNode
-    400002: pCube81
-    400004: pCube82
-    400006: pPlane4
-    400008: pPlane5
-    400010: pPlane6
-    400012: pPlane7
-    2100000: walls
-    2100002: brick
-    2100004: doorframe
-    2100006: lambert1
-    2300000: pCube81
-    2300002: pCube82
-    2300004: pPlane4
-    2300006: pPlane5
-    2300008: pPlane6
-    2300010: pPlane7
-    3300000: pCube81
-    3300002: pCube82
-    3300004: pPlane4
-    3300006: pPlane5
-    3300008: pPlane6
-    3300010: pPlane7
-    4300000: pPlane4
-    4300002: pCube81
-    4300004: pPlane5
-    4300006: pCube82
-    4300008: pPlane6
-    4300010: pPlane7
+    100000: doorframe3
+    100002: doorframe4
+    100004: Floor
+    100006: Floor1
+    100008: hallway
+    100010: //RootNode
+    100012: room1
+    100014: room2
+    100016: wallwithdoorframe
+    400000: doorframe3
+    400002: doorframe4
+    400004: Floor
+    400006: Floor1
+    400008: hallway
+    400010: //RootNode
+    400012: room1
+    400014: room2
+    400016: wallwithdoorframe
+    2100000: floor
+    2100002: podium
+    2100004: ClassroomWalls
+    2100006: Window
+    2100008: doorframe
+    2100010: walls
+    2100012: Brick
+    2100014: Ceiling
+    2300000: doorframe3
+    2300002: doorframe4
+    2300004: Floor
+    2300006: Floor1
+    2300008: hallway
+    2300010: room1
+    2300012: room2
+    2300014: wallwithdoorframe
+    3300000: doorframe3
+    3300002: doorframe4
+    3300004: Floor
+    3300006: Floor1
+    3300008: hallway
+    3300010: room1
+    3300012: room2
+    3300014: wallwithdoorframe
+    4300000: Floor
+    4300002: room1
+    4300004: doorframe3
+    4300006: room2
+    4300008: hallway
+    4300010: wallwithdoorframe
+    4300012: doorframe4
+    4300014: Floor1
   externalObjects: {}
   materials:
     importMaterials: 1
