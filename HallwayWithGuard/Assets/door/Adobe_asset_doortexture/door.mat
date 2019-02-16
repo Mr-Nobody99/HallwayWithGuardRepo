@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Legs
+  m_Name: door
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 943d4051a179ccb458956b1799a2dd2d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1c5f3343d52c37c4887423e2b798e7f4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -40,11 +40,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 83bff1f75f0fd6d46bf2f2329439afe9, type: 3}
+        m_Texture: {fileID: 2800000, guid: ca53ca88a79a65a4c9bb85803db21541, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 9e1954ccf9722d1478f72eced068063d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8143ef9fb123cc3469a17f31ff7fc9fd, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -60,7 +60,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 0.667
+    - _GlossMapScale: 0.553
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
