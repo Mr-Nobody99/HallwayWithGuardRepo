@@ -1011,7 +1011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249414993878949528}
   m_Layer: 0
-  m_Name: Locker3
+  m_Name: Locker3_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
