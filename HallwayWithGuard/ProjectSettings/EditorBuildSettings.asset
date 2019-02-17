@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/Scenes/Hallway.unity
+    guid: 7fbfb6a66575ce948a369dbe73df6cd4
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 6e3d6d9060a8ef443b38e8c1cc31912d
   - enabled: 1
-    path: Assets/Scenes/Hallway.unity
-    guid: 7fbfb6a66575ce948a369dbe73df6cd4
+    path: Assets/Scenes/FinalSetup.unity
+    guid: 9696e47e2849af647a7207f5cfa88781
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: ba75bf48571a51e4b9bf5245ea593832
