@@ -60,7 +60,22 @@ ModelImporter:
     4300016: pCylinder9
     7400000: Take 001
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bells
+    second: {fileID: 2100000, guid: 4b2fff9ec68d3ac41bbc4f5635144e15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: clockbody
+    second: {fileID: 2100000, guid: 3260f89566cd2f045a105b1d24429348, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: cfb22b3725668ed4587f7530ee591916, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -122,7 +137,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
