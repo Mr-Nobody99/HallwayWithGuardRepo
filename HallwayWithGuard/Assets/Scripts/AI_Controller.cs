@@ -1,180 +1,121 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class AI_Controller : MonoBehaviour
 {
-    private GameObject _playerRef;
-    private Ray PlayerLookRay;
-    private float _ToPlayerDot;
-    private bool _hasPlayer = false;
-    private bool _frozen = false;
-    private float _dot;
+
+    private GameObject playerRef;
+    private float dot;
+    int currentPatrolIndex = 0;
+    private bool isPatrolling = true;
+    private bool persuePlayer = false;
+    private bool isStopped = false;
+
+    Animator animController;
+    NavMeshAgent navMeshAgent;
+    RaycastHit Hit;
 
     [SerializeField]
-    bool _Wait;
+    float directionalSwitchProbability = 0.2f;
     [SerializeField]
-    float _waitTime = 3f;
-    [SerializeField]
-    float _directionSwitchProbability = 0.2f;
-    [SerializeField]
-    List<WayPoint> _patrolPoints;
+    List<WayPoint> patrolPoints;
 
-    Animator animControl;
-    NavMeshAgent _navMeshAgent;
-    Ray _enemyRay;
-    int _currentPatrolIndex;
-    bool _isTravelling;
-    bool _isWaiting;
-    bool _patrolForward;
-    float _waitTimer;
-
-    
     // Start is called before the first frame update
     void Start()
     {
-        _playerRef = GameObject.FindGameObjectWithTag("Player");
-        animControl = GetComponent<Animator>();
-        _navMeshAgent = this.GetComponent<NavMeshAgent>();
+        playerRef = GameObject.FindGameObjectWithTag("Player");
+        animController = this.GetComponent<Animator>();
+        navMeshAgent = this.GetComponent<NavMeshAgent>();
 
-        if(_navMeshAgent == null)
+        if(navMeshAgent == null)
         {
-            print("there is no navMeshAgent component attached to:" + gameObject.name);
+            print("There is no navMeshAgent component attached to: " + gameObject.name);
         }
         else
         {
-            if(_patrolPoints != null && _patrolPoints.Count >= 2){
-                _currentPatrolIndex = 0;
-                SetDestination();
+           if(patrolPoints != null && patrolPoints.Count >= 2)
+            {
+                currentPatrolIndex = 0;
+                navMeshAgent.SetDestination(patrolPoints[currentPatrolIndex].transform.position);
+                isPatrolling = true;
             }
-            else
+           else
             {
                 print("Not Enough Patrol Points Set");
             }
         }
-
     }
 
-    public void Update()
+    void OnDrawGizmos()
     {
+        Gizmos.color = Color.red;
+       if(!isStopped) Gizmos.DrawSphere(Hit.point, 5f);
+    }
 
-        _dot = Vector3.Dot(_playerRef.transform.forward, transform.position - _playerRef.transform.position);
-
-        if (_dot < 0) _frozen = Freeze(true);
-        else if (_dot > 0) _frozen = Freeze(false);
-
-
-        if(_isTravelling && _navMeshAgent.remainingDistance <= 1.0f)
+    // Update is called once per frame
+    void Update()
+    {
+        if(!isStopped && Physics.SphereCast(transform.position + new Vector3(0f,3f,0f), 5.0f, transform.forward, out Hit, 50f))
         {
-            _isTravelling = false;
-
-            if (_Wait)
+            Debug.DrawLine(transform.position + new Vector3(0f, 3f, 0f), Hit.point, Color.green);
+            if(Hit.collider.tag == "Player")
             {
-                _isWaiting = true;
-                _waitTimer = 0;
+                isPatrolling = false;
+                animController.SetBool("persuePlayer", true);
+                navMeshAgent.SetDestination(playerRef.transform.position);
+                navMeshAgent.speed = 6.5f;
             }
             else
             {
-                ChangePatrolPoint();
-                SetDestination();
-            }
-        }
-        else if (_isTravelling && _hasPlayer)
-        {
-            _navMeshAgent.SetDestination(_playerRef.transform.position);
-        }
-
-        if (_isWaiting)
-        {
-            _waitTimer += Time.deltaTime;
-            if(_waitTimer >= _waitTime)
-            {
-                _isWaiting = false;
-
-                ChangePatrolPoint();
-                SetDestination();
-            }
-        }
-    }
-
-    private void SetDestination()
-    {
-        if (_hasPlayer)
-        {
-            float distanceToPlayer = Vector3.Distance(transform.position, _playerRef.transform.position);
-            if (distanceToPlayer > 1.5f)
-            {
-                _navMeshAgent.SetDestination(_playerRef.transform.position);
+                isPatrolling = true;
+                animController.SetBool("persuePlayer", false);
+                navMeshAgent.speed = 4.25f;
             }
         }
 
-        if (_patrolPoints != null && _hasPlayer == false)
+        dot = Vector3.Dot(playerRef.transform.forward, transform.position - playerRef.transform.position);
+
+        if (dot < 0) SetIsStopped(true);
+        else if (dot > 0) SetIsStopped(false);
+
+        if(isPatrolling && navMeshAgent.remainingDistance <= 1.0f)
         {
-            Vector3 target = _patrolPoints[_currentPatrolIndex].transform.position;
-            _navMeshAgent.SetDestination(target);
-            _isTravelling = true;
+            ChangePatrolPoint();
         }
+
     }
 
     private void ChangePatrolPoint()
     {
-        if(UnityEngine.Random.Range(0f,1f) <= _directionSwitchProbability)
+        if(UnityEngine.Random.Range(0f,1f) <= directionalSwitchProbability)
         {
-            _patrolForward = !_patrolForward;
+            currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Count;
+        }
+        else if (--currentPatrolIndex < 0)
+        {
+            currentPatrolIndex = patrolPoints.Count - 1;
         }
 
-        if (_patrolForward)
-        {
-            _currentPatrolIndex = (_currentPatrolIndex + 1) % _patrolPoints.Count;
-        }
-        else if (--_currentPatrolIndex < 0)
-        {
-            _currentPatrolIndex = _patrolPoints.Count - 1;
-        }
+        navMeshAgent.SetDestination(patrolPoints[currentPatrolIndex].transform.position);
+
+    }
+
+    private void SetIsStopped(bool shouldStop)
+    {
+        isStopped = shouldStop;
+        navMeshAgent.isStopped = shouldStop;
+        animController.SetBool("isStopped", shouldStop);
     }
 
     private void OnTriggerStay(Collider other)
     {
-        RaycastHit Hit;
-        if (other.tag == "Player" && !_frozen)
-        {
-            if( Physics.Raycast(transform.position + new Vector3(0.0f,1.0f,0.0f), transform.forward, out Hit,100.0f))
-            {
-                Debug.DrawRay(transform.position + new Vector3(0.0f, 1.0f, 0.0f), transform.forward * 100.0f, Color.red);
-               // print(Hit.collider.tag);
-                if (Hit.collider.gameObject.tag == "Player")
-                {
-                    _navMeshAgent.speed = 7.0f;
-                    _hasPlayer = true;
-                    _navMeshAgent.SetDestination(_playerRef.transform.position);
-                    //_navMeshAgent.SetDestination(_playerRef.transform.position);
-                    animControl.SetBool("PersuePlayer", true);
-
-                }
-               // if (Hit.rigidbody.tag.ToString() == "Player") print("Can See Player");
-            }
-        }
-    }
-
-    public bool Freeze(bool isStopped)
-    {
-        _navMeshAgent.isStopped = isStopped;
-        animControl.SetBool("IsStoped", isStopped);
-
-        if (isStopped) animControl.SetBool("PersuePlayer", false);
-
-        return _navMeshAgent.isStopped;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
         if (other.tag == "Player")
         {
-            _hasPlayer = false;
-            SetDestination();
+            print("should die.");
+            SceneManager.LoadScene(2);
         }
     }
-
 }

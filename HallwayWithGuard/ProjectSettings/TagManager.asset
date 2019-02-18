@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Guard1
-  - Guard2
+  - Mirror
   layers:
   - Default
   - TransparentFX
