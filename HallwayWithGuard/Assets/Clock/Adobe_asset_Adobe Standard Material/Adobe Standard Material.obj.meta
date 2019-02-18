@@ -1,65 +1,64 @@
 fileFormatVersion: 2
-guid: f78c36f83f3d54741b76ea34d33513cc
+guid: 92333af1dc7c5fa41b411d9ec05ea6de
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: back
-    100002: //RootNode
-    100004: pCylinder1
-    100006: pCylinder2
-    100008: pCylinder3
-    100010: pCylinder4
-    100012: pCylinder5
-    100014: pCylinder6
-    100016: pCylinder7
-    100018: pCylinder8
-    100020: pCylinder9
-    100022: sphere1
-    400000: back
-    400002: //RootNode
-    400004: pCylinder1
-    400006: pCylinder2
-    400008: pCylinder3
-    400010: pCylinder4
-    400012: pCylinder5
-    400014: pCylinder6
-    400016: pCylinder7
-    400018: pCylinder8
-    400020: pCylinder9
-    400022: sphere1
-    2000000: back
-    2100000: clockbody
-    2100002: metal
-    2100004: Bells
-    2300000: pCylinder1
-    2300002: pCylinder2
-    2300004: pCylinder3
-    2300006: pCylinder4
-    2300008: pCylinder5
-    2300010: pCylinder6
-    2300012: pCylinder7
-    2300014: pCylinder8
-    2300016: pCylinder9
-    3300000: pCylinder1
-    3300002: pCylinder2
-    3300004: pCylinder3
-    3300006: pCylinder4
-    3300008: pCylinder5
-    3300010: pCylinder6
-    3300012: pCylinder7
-    3300014: pCylinder8
-    3300016: pCylinder9
-    4300000: pCylinder1
-    4300002: pCylinder2
-    4300004: pCylinder3
-    4300006: pCylinder4
-    4300008: pCylinder5
-    4300010: pCylinder6
-    4300012: pCylinder7
-    4300014: pCylinder8
-    4300016: pCylinder9
-    7400000: Take 001
-    9500000: //RootNode
+    100000: //RootNode
+    100002: pCylinder1_pCylinder1
+    100004: pCylinder2_pCylinder2
+    100006: pCylinder3_pCylinder3
+    100008: pCylinder4_pCylinder4
+    100010: pCylinder5_pCylinder5
+    100012: pCylinder6_pCylinder6
+    100014: pCylinder7_pCylinder7
+    100016: pCylinder8_pCylinder8
+    100018: pCylinder9_pCylinder9
+    400000: //RootNode
+    400002: pCylinder1_pCylinder1
+    400004: pCylinder2_pCylinder2
+    400006: pCylinder3_pCylinder3
+    400008: pCylinder4_pCylinder4
+    400010: pCylinder5_pCylinder5
+    400012: pCylinder6_pCylinder6
+    400014: pCylinder7_pCylinder7
+    400016: pCylinder8_pCylinder8
+    400018: pCylinder9_pCylinder9
+    2100000: pCylinder1_pCylinder1Mat
+    2100002: pCylinder2_pCylinder2Mat
+    2100004: pCylinder3_pCylinder3Mat
+    2100006: pCylinder4_pCylinder4Mat
+    2100008: pCylinder5_pCylinder5Mat
+    2100010: pCylinder6_pCylinder6Mat
+    2100012: pCylinder7_pCylinder7Mat
+    2100014: pCylinder8_pCylinder8Mat
+    2100016: pCylinder9_pCylinder9Mat
+    2300000: pCylinder1_pCylinder1
+    2300002: pCylinder2_pCylinder2
+    2300004: pCylinder3_pCylinder3
+    2300006: pCylinder4_pCylinder4
+    2300008: pCylinder5_pCylinder5
+    2300010: pCylinder6_pCylinder6
+    2300012: pCylinder7_pCylinder7
+    2300014: pCylinder8_pCylinder8
+    2300016: pCylinder9_pCylinder9
+    3300000: pCylinder1_pCylinder1
+    3300002: pCylinder2_pCylinder2
+    3300004: pCylinder3_pCylinder3
+    3300006: pCylinder4_pCylinder4
+    3300008: pCylinder5_pCylinder5
+    3300010: pCylinder6_pCylinder6
+    3300012: pCylinder7_pCylinder7
+    3300014: pCylinder8_pCylinder8
+    3300016: pCylinder9_pCylinder9
+    4300000: pCylinder1_pCylinder1
+    4300002: pCylinder2_pCylinder2
+    4300004: pCylinder3_pCylinder3
+    4300006: pCylinder4_pCylinder4
+    4300008: pCylinder5_pCylinder5
+    4300010: pCylinder6_pCylinder6
+    4300012: pCylinder7_pCylinder7
+    4300014: pCylinder8_pCylinder8
+    4300016: pCylinder9_pCylinder9
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -112,8 +111,8 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -140,7 +139,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
